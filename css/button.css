@@ -1,9 +1,9 @@
 .button {
     display: inline-block;
-    font-size: 18px;
-    color: #3d4143;
+    font-size: 20px;
+    color: #000000;
     font-family: inherit;
-    font-weight: 600;
+    font-weight: 200;
     cursor: pointer;
     position: relative;
     border: none;
@@ -17,7 +17,7 @@
   
   .button:focus,
   .button:hover {
-    color: #2196d4;
+    color: #ffffff;
   }
   
   .button:focus:after,
@@ -34,7 +34,7 @@
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: #2196d4;
+    background-color: #ffffff;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;

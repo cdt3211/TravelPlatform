@@ -1,35 +1,35 @@
 @font-face {
     font-family: title;
-    src: url(../font/鸿雷拙书简体.otf);
+    src: url(../font/霞鹜臻楷.ttf);
 }
 .bg1{
     width: 100%;
-    height: 640px;
+    height: 791px;
     background-color: rgb(222, 231, 247);
+    background-image: url(../image/yang-E4wwlKwPd04-unsplash.jpg);
+    background-size: cover;
 }
-.bg2{
-    width: 100%;
-    height: 640px;
-    background-color: rgb(239, 108, 21);
-}
+
 .title{
     background-color: transparent;
-    font-size: 23px;
-    margin-right: 15%;
+    font-size: 25px;
+    margin-right: 10%;
     margin-left: 1%;
-    width: 180px;
+    width: 330px;
+    font-weight: bold;
     font-family:title;
 }
 .header{
     display: flex;
     background-color: transparent;
-    position: fixed;
+    /* position: fixed; */
+    z-index: 1;
     align-items: center;
     width: 100%;
-    height: 40px;
-    border-bottom: 1px solid gray;
+    height: 60px;
+    /* border-bottom: 1px solid rgb(0, 0, 0); */
     text-align: center;
-    box-shadow: 0px 1px 5px 0px rgb(35, 35, 35);
+    /* box-shadow: 0px 1px 5px 0px rgb(35, 35, 35); */
 }
 .navbar{
     background-color: transparent;
