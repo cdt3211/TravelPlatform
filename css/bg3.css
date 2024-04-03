@@ -1,0 +1,25 @@
+.bg3{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 790px;
+    background: #edc0bf;
+    background: linear-gradient(90deg, #f2e1e0 0,#a7b1ee 58%);
+}
+
+#rank1{
+    background: rgba(255, 255, 255, .6);
+    width: 50%;
+    height: 700px;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 2px 0px black;
+    overflow: hidden;
+}
+#rank2{
+    background: rgba(255, 255, 255, .6);
+    width: 50%;
+    height: 700px;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 2px 0px black;
+    overflow: hidden;
+}

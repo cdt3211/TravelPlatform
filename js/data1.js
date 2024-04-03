@@ -1,146 +1,127 @@
-var myChart = echarts.init(document.getElementById('data1'));
+var myChart1 = echarts.init(document.getElementById('data1'));
 
-var option = {
-    backgroundColor: new echarts.graphic.LinearGradient(
-      0,
-      0,
-      0,
-      1,
-      [
-        {
-          offset: 0,
-          color: "#c86589",
-        },
-        {
-          offset: 1,
-          color: "#06a7ff",
-        },
-      ],
-      false
-    ),
-    title: {
-      text: "游客人数(万人次)",
-      left: "center",
-      bottom: "5%",
-      textStyle: {
-        color: "#fff",
-        fontSize: 16,
+var data1Data = {
+  '全国':{
+    series1:[4.57, 5.13, 5.73, 2.23, 2.92, 2.04, 4.91],//总收入
+    series2:[15.9, 12.3, 10.4, -61.1, 31.0, -30.0, 140.3],//同比增长
+  },
+  '新疆':{
+    series1:[],
+    series2:[],
+  }
+}
+
+option = {
+  backgroundColor: "transparent",
+  title: {
+    text: "旅游收入",
+    left: "center",
+    bottom: "5%",
+    textStyle: {
+      fontSize: 16,
+    },
+  },
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "shadow",
+    },
+  },
+  legend: {
+    data: ["旅游收入","同比增长"],
+    top: "7%",
+  },
+  grid: {
+    top: "20%",
+    left: "5%",
+    right: "5%",
+    bottom: "15%",
+    containLabel: true,
+  },
+  xAxis: {
+    type: "category",
+    axisTick: {
+      alignWithLabel: true,
+    },
+    axisLine: {
+      lineStyle: {
+        color: "black",
       },
     },
-    grid: {
-      top: "20%",
-      left: "10%",
-      right: "10%",
-      bottom: "15%",
-      containLabel: true,
+    axisTick: {
+      show: false,
     },
-    xAxis: {
-      type: "category",
-      boundaryGap: false,
-      data: ["18", "19", "20", "21", "22", "23"],
-      axisLabel: {
-        margin: 30,
-        color: "#ffffff63",
-      },
+    data: ["2017", "2018", "2019", "2020", "2021", "2022", "2023"],
+  },
+  yAxis: [
+    {
+      splitLine: { show: false },
       axisLine: {
-        show: false,
-      },
-      axisTick: {
-        show: true,
-        length: 25,
         lineStyle: {
-          color: "#ffffff1f",
+          // color: "#B4B4B4",
         },
       },
-      splitLine: {
-        show: true,
-        lineStyle: {
-          color: "#ffffff1f",
-        },
+      axisLabel: {
+        formatter: "{value} 万亿元",
       },
     },
-    yAxis: [
-      {
-        type: "value",
-        position: "right",
-        axisLabel: {
-          margin: 20,
-          color: "#ffffff63",
-        },
-  
-        axisTick: {
-          show: true,
-          length: 15,
-          lineStyle: {
-            color: "#ffffff1f",
-          },
-        },
-        splitLine: {
-          show: true,
-          lineStyle: {
-            color: "#ffffff1f",
-          },
-        },
-        axisLine: {
-          lineStyle: {
-            color: "#fff",
-            width: 2,
-          },
+    {
+      splitLine: { show: false },
+      axisLine: {
+        lineStyle: {
+          // color: "#B4B4B4",
         },
       },
-    ],
-    series: [
-      {
-        name: "注册总量",
-        type: "line",
-        smooth: true, //是否平滑曲线显示
-        showAllSymbol: true,
-        symbol: "circle",
-        symbolSize: 6,
-        lineStyle: {
-          normal: {
-            color: "#fff", // 线条颜色
-          },
-        },
-        label: {
+      axisLabel: {
+        formatter: "{value} %",
+      },
+    },
+  ],
+
+  series: [
+    {
+      name: "旅游收入",
+      type: "bar",
+      barGap: "-100%",
+      barWidth: 15,
+      label: {
+        normal: {
           show: true,
           position: "top",
-          textStyle: {
-            color: "#fff",
-          },
         },
-        itemStyle: {
-          color: "red",
-          borderColor: "#fff",
-          borderWidth: 3,
-        },
-        tooltip: {
-          show: false,
-        },
-        areaStyle: {
-          normal: {
-            color: new echarts.graphic.LinearGradient(
-              0,
-              0,
-              0,
-              1,
-              [
-                {
-                  offset: 0,
-                  color: "#eb64fb",
-                },
-                {
-                  offset: 1,
-                  color: "#3fbbff0d",
-                },
-              ],
-              false
-            ),
-          },
-        },
-        data: [553900, 600600, 287900, 324600, 253000, 489000],
       },
-    ],
-  };
+      itemStyle: {
+        normal: {
+          barBorderRadius: 5,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: "rgba(156,107,211,0.5)" },
+          ]),
+        },
+      },
+      data: [4.57, 5.13, 5.73, 2.23, 2.92, 2.04, 4.91],
+    },
+    {
+      name: "同比增长",
+      type: "line",
+      smooth: true,
+      showAllSymbol: true,
+      symbol: "emptyCircle",
+      symbolSize: 8,
+      yAxisIndex: 1,
+      label: {
+        normal: {
+          show: true,
+          position: "top",
+        },
+      },
+      itemStyle: {
+        normal: {
+          color: "#F02FC2",
+        },
+      },
+      data: [15.9, 12.3, 10.4, -61.1, 31.0, -30.0, 140.3],
+    },
+  ],
+};
 
-myChart.setOption(option);
+myChart1.setOption(option);
