@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河南</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>河南 HeNan</h1>
+        <div id="intro">
+            <img src="../image/河南/河南.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>河南省，简称“豫”，位于中国中东部、黄河中下游，省会郑州。河南省是中华民族和华夏文明的重要发祥地，是夏、商、周三代文明的核心区。河南省地下文物全国第一，地上文物全国第二，是全国文物大省。河南历史代表文化为“中原文化”。截至2023年3月，河南省辖17个地级市，21个县级市（含1个省直辖县级市）、82个县、54个市辖区，1180个镇、586个乡、692个街道办事处。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/河南/郑州.jpg" alt="">
+                    <div class="name">郑州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河南/许昌.jpg" alt="">
+                    <div class="name">许昌</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河南/洛阳.jpg" alt="">
+                    <div class="name">洛阳</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/河南/南阳.jpg" alt="">
+                    <div class="name">南阳</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河南/开封.jpg" alt="">
+                    <div class="name">开封</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河南/信阳.jpg" alt="">
+                    <div class="name">信阳</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

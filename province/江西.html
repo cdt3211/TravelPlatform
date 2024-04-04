@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江西</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>江西 JiangXi</h1>
+        <div id="intro">
+            <img src="../image/江西/江西.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>江西省，简称“赣”，位于中国东南部，长江中下游南岸，省会南昌。江西省自古为“干越之地”“吴头楚尾、粤户闽庭”，乃“形胜之区”，素有“文章节义之邦，白鹤鱼米之国”之美称。境内有中国第一大淡水湖—鄱阳湖，也是亚洲超大型的铜工业基地之一，有“世界钨都”“稀土王国”“中国铜都”“有色金属之乡”的美誉。截至2023年，江西省辖11个地级市、27个市辖区、12个县级市、61个县，合计100个县级区划。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/江西/南昌.jpg" alt="">
+                    <div class="name">南昌</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江西/景德镇.jpg" alt="">
+                    <div class="name">景德镇</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江西/上饶.jpg" alt="">
+                    <div class="name">上饶</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/江西/赣州.jpg" alt="">
+                    <div class="name">赣州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江西/九江.jpg" alt="">
+                    <div class="name">九江</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江西/婺源.jpg" alt="">
+                    <div class="name">婺源</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

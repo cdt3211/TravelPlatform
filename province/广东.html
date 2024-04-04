@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广东</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>广东 GuangDong</h1>
+        <div id="intro">
+            <img src="../image/广东/广东.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>广东省，简称“粤”。会广州市。因古地名广信之东，故名“广东”。位于南岭以南，南海之滨，与香港、澳门、广西、湖南、江西及福建接壤，与海南省隔海相望，土地总面积17.98万平方千米。截至2022年10月，广东省下辖21个地级市、65个市辖区、20个县级市、34个县、3个自治县。2023年末，广东省常住人口12706万人。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门景点</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/广东/广州.jpg" alt="">
+                    <div class="name">广州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/广东/深圳.jpg" alt="">
+                    <div class="name">深圳</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/广东/珠海.jpg" alt="">
+                    <div class="name">珠海</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/广东/佛山.jpg" alt="">
+                    <div class="name">佛山</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/广东/东莞.jpg" alt="">
+                    <div class="name">东莞</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/广东/汕头.jpg" alt="">
+                    <div class="name">汕头</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内蒙古</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>内蒙古 NeiMengGu</h1>
+        <div id="intro">
+            <img src="../image/内蒙古/内蒙古.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>内蒙古自治区，简称“内蒙古”，首府呼和浩特；北部与俄罗斯、蒙古接壤。“内蒙古”之称最初就由“内札萨克蒙古”而来，并沿袭至今。内蒙古土地辽阔、资源丰富，有“东林西矿、南农北牧”之称，草原、森林和人均耕地面积居全中国第一，稀土金属储量居世界首位，同时也是中国最大的草原牧区。这里保存有中国最完好的草原，素有“牧草王国、歌的海洋、酒的故乡”之称。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/内蒙古/包头.jpg" alt="">
+                    <div class="name">包头</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/内蒙古/赤峰.jpg" alt="">
+                    <div class="name">赤峰</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/内蒙古/鄂尔多斯.jpg" alt="">
+                    <div class="name">鄂尔多斯</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/内蒙古/呼和浩特.jpg" alt="">
+                    <div class="name">呼和浩特</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/内蒙古/呼伦贝尔.jpg" alt="">
+                    <div class="name">呼伦贝尔</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/内蒙古/通辽.jpg" alt="">
+                    <div class="name">通辽</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

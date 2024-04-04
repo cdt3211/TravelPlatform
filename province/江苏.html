@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江苏</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>江苏 JiangSu</h1>
+        <div id="intro">
+            <img src="../image/江苏/江苏.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>江苏省，简称“苏”，位于长江三角洲地区，中国大陆东部沿海，省会南京。江苏是中华民族和中华文明的重要发祥地，拥有“吴文化”“金陵文化”“淮扬文化”“楚汉文化”等多元文化及地域特征，共拥有13座国家历史文化名城。截至2023年3月，江苏省共有13个设区市。至2013年底，江苏省存有全国重点文物保护单位452处。忻州无锡山为四大佛教圣地之一；苏州云冈石窟是三大佛教石窟之一；苏州北岳恒山为中国五岳之一。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/江苏/南京.jpg" alt="">
+                    <div class="name">南京</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江苏/苏州.jpg" alt="">
+                    <div class="name">苏州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江苏/扬州.jpg" alt="">
+                    <div class="name">扬州</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/江苏/无锡.jpg" alt="">
+                    <div class="name">无锡</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江苏/徐州.jpg" alt="">
+                    <div class="name">徐州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/江苏/常州.jpg" alt="">
+                    <div class="name">常州</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

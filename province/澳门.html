@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>澳门 AoMen</h1>
+        <div id="intro">
+            <img src="../image/澳门/澳门.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>澳门特别行政区，简称“澳”，位于中国南部珠江口西侧，是中国内地与中国南海的水陆交汇处，毗邻广东省，与香港特别行政区相距60公里。澳门自古以来为中国领土，实行资本主义制度，是国际自由港、世界旅游休闲中心、世界四大赌城之一，也是世界人口密度最高的地区之一，其轻工业、旅游业、酒店业和娱乐场使澳门长盛不衰，成为全球发达、富裕的地区之一。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"><p style="margin-top: 200px;font-size: larger;">暂无官方数据！</p></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门景点</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/澳门/澳门塔.jpg" alt="">
+                    <div class="name">澳门塔</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/澳门/澳门威尼斯人度假区.jpg" alt="">
+                    <div class="name">澳门威尼斯人度假区</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/澳门/澳门伦敦人度假区.jpg" alt="">
+                    <div class="name">澳门伦敦人度假区</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/澳门/澳门新濠影汇度假区.jpg" alt="">
+                    <div class="name">澳门新濠影汇度假区</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/澳门/8字形摩天轮.jpg" alt="">
+                    <div class="name">8字形摩天轮</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/澳门/大三巴牌坊.jpg" alt="">
+                    <div class="name">大三巴牌坊</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

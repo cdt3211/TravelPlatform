@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>香港 XiangGang</h1>
+        <div id="intro">
+            <img src="../image/香港/香港.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>香港特别行政区，简称“港”，位于中国南部、珠江口以东，西与澳门隔海相望，北与深圳相邻，香港是一座高度繁荣的自由港和国际大都市，与纽约、伦敦并称为“纽伦港”，是全球第三大金融中心，重要的国际贸易、航运中心和国际创新科技中心，被GaWC评为世界一线城市第三位。以廉洁的政府、良好的治安、自由的经济体系及完善的法治，有东方之珠、美食天堂和购物天堂等美誉。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门景点</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/香港/香港故宫文化博物馆.jpg" alt="">
+                    <div class="name">香港故宫文化博物馆</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/香港/香港海洋公园.jpg" alt="">
+                    <div class="name">香港海洋公园</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/香港/昂坪360.jpg" alt="">
+                    <div class="name">昂坪360</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/香港/尖沙咀.jpg" alt="">
+                    <div class="name">尖沙咀</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/香港/香港迪士尼乐园.jpg" alt="">
+                    <div class="name">香港迪士尼乐园</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/香港/太平山顶.jpg" alt="">
+                    <div class="name">太平山顶</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山东</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>山东 ShanDong</h1>
+        <div id="intro">
+            <img src="../image/山东/山东.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>山东省，简称“鲁”，是中华文明重要发祥地之一、儒家文化发源地、革命老区，地处中国华东沿海、黄河下游，省会济南。山东省历史文化悠久，素有“孔孟之乡、礼仪之邦”的美誉。作为齐鲁文化、东夷文化、海岱文化交相辉映的传承之地，拥有10座国家历史文化名城。截至2023年12月31日，共有设区的市16个。%以上。至2013年底，山东省存有全国重点文物保护单位452处。忻州威海山为四大佛教圣地之一；济南云冈石窟是三大佛教石窟之一；济南北岳恒山为中国五岳之一。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/山东/青岛.jpg" alt="">
+                    <div class="name">青岛</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山东/济南.jpg" alt="">
+                    <div class="name">济南</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山东/烟台.jpg" alt="">
+                    <div class="name">烟台</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/山东/威海.jpg" alt="">
+                    <div class="name">威海</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山东/泰安.jpg" alt="">
+                    <div class="name">泰安</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山东/淄博.jpg" alt="">
+                    <div class="name">淄博</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

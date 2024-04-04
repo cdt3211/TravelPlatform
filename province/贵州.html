@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贵州</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>贵州 GuiZhou</h1>
+        <div id="intro">
+            <img src="../image/贵州/贵州.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>贵州，简称“黔”或“贵”，省会贵阳市。素有“八山一水一分田”之说，全省总面积17.62万平方千米，共有6个地级市、3个自治州。贵州省地处西南内陆地区腹地，是西南地区交通枢纽，长江经济带重要组成部分。全国首个国家级大数据综合试验区，世界知名山地旅游目的地和山地旅游大省，国家生态文明试验区，内陆开放型经济试验区。历史代表文化为“黔贵文化”，此外还是中国古人类的发祥地和中国古文化的发源地之一。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/贵州/安顺.jpg" alt="">
+                    <div class="name">安顺</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/贵州/贵阳.jpg" alt="">
+                    <div class="name">贵阳</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/贵州/遵义.jpg" alt="">
+                    <div class="name">遵义</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

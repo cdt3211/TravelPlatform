@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>北京 BeiJing</h1>
+        <div id="intro">
+            <img src="../image/北京/北京.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>北京市（Beijing），简称“京”，古称燕京、北平，是中华人民共和国首都、直辖市、国家中心城市、超大城市，国务院批复确定的中国政治中心、文化中心、国际交往中心、科技创新中心，中国历史文化名城和古都之一，世界一线城市。京市是中华民族的发祥地之一，世界著名古都和现代化国际城市，荟萃了自元、明、清以来的中华文化优秀成果和优良传统，拥有众多名胜古迹和人文景观，是全球拥有世界文化遗产数量最多的城市。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门景点</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/北京/故宫.jpg" alt="">
+                    <div class="name">故宫</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/北京/天安门.jpg" alt="">
+                    <div class="name">天安门</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/北京/天坛.jpg" alt="">
+                    <div class="name">天坛</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/北京/香山公园.jpg" alt="">
+                    <div class="name">香山公园</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/北京/颐和园.jpg" alt="">
+                    <div class="name">颐和园</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/北京/长城.jpg" alt="">
+                    <div class="name">长城</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

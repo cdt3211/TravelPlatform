@@ -1,9 +1,8 @@
-.button {
-    display: inline-block;
+.navbar button {
     font-size: 20px;
-    color: #000000;
+    color: rgb(0, 0, 0);
     font-family: inherit;
-    font-weight: 200;
+    font-weight: 300;
     cursor: pointer;
     position: relative;
     border: none;
@@ -12,21 +11,21 @@
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: color;
-    margin:0px 10px;
+    margin:0px 40px;
   }
   
-  .button:focus,
-  .button:hover {
-    color: #ffffff;
+  .navbar button:focus,
+  .navbar button:hover {
+    color: #3A8BFF;
   }
   
-  .button:focus:after,
-  .button:hover:after {
+  .navbar button:focus:after,
+  .navbar button:hover:after {
     width: 100%;
     left: 0%;
   }
   
-  .button:after {
+  .navbar button:after {
     content: "";
     pointer-events: none;
     bottom: -2px;
@@ -34,8 +33,9 @@
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #3A8BFF;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
   }
+  

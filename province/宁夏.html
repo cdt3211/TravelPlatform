@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宁夏</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>宁夏 NingXia</h1>
+        <div id="intro">
+            <img src="../image/宁夏/宁夏.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>宁夏回族自治区，简称“宁”，首府银川市，设宁夏府路，宁夏由此得名。宁夏回族自治区是中华民族远古文明发祥地之一。宁夏的水洞沟遗址是三万年前旧石器时代的遗址。宁夏还是中国长城博物馆，从战国长城到明长城的古长城遗址，在宁夏都有分布。宁夏还是红色土地、红军长征会师地、陕甘宁革命旧址等，既有秀美的风光，又有深厚的历史文化底蕴，古今素有“塞上江南”之美誉。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/宁夏/灵武.jpg" alt="">
+                    <div class="name">灵武</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/宁夏/银川.jpg" alt="">
+                    <div class="name">银川</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/宁夏/中卫.jpg" alt="">
+                    <div class="name">中卫</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

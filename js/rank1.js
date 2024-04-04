@@ -2,14 +2,19 @@ var myChart5 = echarts.init(document.getElementById('rank1'));
 
 var option = {
     title: {
-        text: "热门城市排名",
-        left: "center",
+        text: "热门省份",
+        right: "center",
         bottom: "3%",
         textStyle: {
-          fontSize: 16,
+            color: "black",
+            fontSize: 16,
         },
       },
-    tooltip:{},
+    tooltip:{
+        formatter: function(params) {
+            return params.marker +params.name + ': ' + params.value + '亿人';
+        }
+    },
     grid:{
         top:10,
         width:"70%",
@@ -19,7 +24,8 @@ var option = {
     },
     xAxis: {
         type: 'value',
-        name: '(热度)',
+        max: 15,
+        name: '人数(亿人)',
         nameTextStyle:{
             align:'left',
             verticalAlign:'top'
@@ -105,9 +111,11 @@ var option = {
                 show:false
             },
             show:true,
-            data: ["北京","成都","上海","淄博","广州","南京","昆明","武汉","长沙","重庆"],
+            data: ["贵州","云南","河南","江苏","安徽","河北","广西","山东","江西","浙江"],
             axisLabel:{
-                color:"#333",
+                fontSize: 22,
+                fontWeight: 400,
+                color:"black",
                 formatter: function (value, index){
                     if(value.length>7){
                         return value.slice(0,6)+"..."
@@ -141,7 +149,7 @@ var option = {
             name: "数据量",
             type: 'bar',
             barWidth:20,
-            data: [96.45,95.09,94.71,92.69,92.55,92.50,92.27,92.03,91.53,91.53], //次数列表
+            data: [12.84,10.4,9.95,9.4,8.5,8.44,8.49,8.2,8.18,7.6,7.64], //次数列表
             yAxisIndex:1,//使用右侧y轴
             color:{
                 type: 'linear',

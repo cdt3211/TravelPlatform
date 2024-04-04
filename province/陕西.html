@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陕西</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>陕西 ShaanXi</h1>
+        <div id="intro">
+            <img src="../image/陕西/陕西.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>陕西省，简称“陕”或“秦”，省会西安，陕西省下辖10个地级市（其中省会西安为副省级市）、31个市辖区、7个县级市、69个县。陕西省是中华民族及华夏文化的重要发祥地之一，历史代表文化为“三秦文化”，有西周、秦、汉、隋、唐等十四个政权在陕西省建都，是中国经纬度基准点大地原点和北京时间国家授时中心所在地。黄土高原占全省土地面积的40%，地跨黄河、长江两大水系，横跨三个气候带。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/陕西/宝鸡.jpg" alt="">
+                    <div class="name">宝鸡</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/陕西/安康.jpg" alt="">
+                    <div class="name">安康</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/陕西/汉中.jpg" alt="">
+                    <div class="name">汉中</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/陕西/渭南.jpg" alt="">
+                    <div class="name">渭南</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/陕西/西安.jpg" alt="">
+                    <div class="name">西安</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/陕西/咸阳.jpg" alt="">
+                    <div class="name">咸阳</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

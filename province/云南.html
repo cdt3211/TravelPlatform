@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云南</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>云南 YunNan</h1>
+        <div id="intro">
+            <img src="../image/云南/云南.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p> 云南省，简称“云”或“滇”，位于西南地区，省会昆明。云南省是全国边境线最长的省份之一。云南省动植物种类数为全国之冠，素有“动植物王国”之称，被誉为“有色金属王国”，历史文化悠久，自然风光绚丽，是人类文明重要发祥地之一。云南历史代表文化为“滇文化”。截至2022年，云南省下辖16个地级行政区，其中8个地级市，8个自治州，合计129个县级区划。也是中国民族种类最多的省份，世居少数民族有25个。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/云南/大理.jpg" alt="">
+                    <div class="name">大理</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/云南/昆明.jpg" alt="">
+                    <div class="name">昆明</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/云南/丽江.jpg" alt="">
+                    <div class="name">丽江</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/云南/腾冲.jpg" alt="">
+                    <div class="name">腾冲</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/云南/西双版纳.jpg" alt="">
+                    <div class="name">西双版纳</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/云南/景洪.jpg" alt="">
+                    <div class="name">景洪</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

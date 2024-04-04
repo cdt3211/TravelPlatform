@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吉林</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>吉林 JiLin</h1>
+        <div id="intro">
+            <img src="../image/吉林/吉林.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>吉林省，简称“吉”，省会长春市；吉林省具有沿边近海优势，是全国9个边境省份之一，是国家“一带一路”向北开放的重要窗口，是吉林乃至中国对外贸易、对外交流的重要通道。。长白山景区、高句丽古迹、向海国家级自然保护区、防川风景名胜区、伪满皇宫博物院、松花湖（吉林）雾凇、净月潭国家森林公园、查干湖在吉林省众多A级景区的激烈角逐中脱颖而出，荣膺“吉林八景”美誉</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/吉林/延边.jpg" alt="">
+                    <div class="name">延边</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/吉林/长春.jpg" alt="">
+                    <div class="name">长春</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/吉林/吉林市.jpg" alt="">
+                    <div class="name">吉林市</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广西</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>广西 GuangXi</h1>
+        <div id="intro">
+            <img src="../image/广西/广西.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>广西壮族自治区，简称“桂”，首府南宁市，广西是个多民族聚居的自治区，少数民族人口数量居全国第一位，占全区常住人口的37.6%，其中壮族占全区常住人口的31.4%。八桂文化是广西民族文化为主要内容，是岭南文化的组成部分。广西是中国唯一临海的少数民族自治区、西部唯一的沿海地区，是大西南最便捷的出海口。是海上丝绸之路的重要枢纽，在西部大开发战略格局和国家对外开放大局中具有独特地位。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/广西/南宁.jpg" alt="">
+                    <div class="name">南宁</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/广西/桂林.jpg" alt="">
+                    <div class="name">桂林</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/广西/崇左.jpg" alt="">
+                    <div class="name">崇左</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山西</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>山西 ShanXi</h1>
+        <div id="intro">
+            <img src="../image/山西/山西.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>山西省，简称“晋”，位于中国华北，省会太原，是典型的为黄土覆盖的山地高原。山西地处秦晋文化区，历史代表文化为“三晋文化。山西被称为“中国古代建筑艺术博物馆”，境内保存完好的宋、金以前的地面古建筑物占中国的70%以上。至2013年底，山西省存有全国重点文物保护单位452处。忻州五台山为四大佛教圣地之一；大同云冈石窟是三大佛教石窟之一；大同北岳恒山为中国五岳之一。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/山西/太原.jpg" alt="">
+                    <div class="name">太原</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山西/大同.jpg" alt="">
+                    <div class="name">大同</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山西/运城.jpg" alt="">
+                    <div class="name">运城</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/山西/五台.jpg" alt="">
+                    <div class="name">五台</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山西/平遥.jpg" alt="">
+                    <div class="name">平遥</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/山西/晋中.jpg" alt="">
+                    <div class="name">晋中</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

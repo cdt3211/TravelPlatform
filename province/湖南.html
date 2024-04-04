@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖南</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>湖南 HuNan</h1>
+        <div id="intro">
+            <img src="../image/湖南/湖南.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>湖南省，简称“湘”，地处云贵高原向江南丘陵和南岭山脉向江汉平原过渡的地带，省会长沙。湖南省历史代表文化为“湖湘文化”。因大部分区域处于洞庭湖以南而得名“湖南”，因省内最大河流湘江流贯全境而简称“湘”；是华夏文明的重要发祥地之一，相传炎帝神农氏在此种植五谷、织麻为布、制作陶器，坐落于株洲市的炎帝陵成为凝聚中华民族的精神象征。截至2021年5月，湖南省下辖13个地级市，1个自治州。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/湖南/长沙.jpg" alt="">
+                    <div class="name">长沙</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖南/张家界.jpg" alt="">
+                    <div class="name">张家界</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖南/衡阳.jpg" alt="">
+                    <div class="name">衡阳</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/湖南/郴州.jpg" alt="">
+                    <div class="name">郴州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖南/岳阳.jpg" alt="">
+                    <div class="name">岳阳</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖南/浏阳.jpg" alt="">
+                    <div class="name">浏阳</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

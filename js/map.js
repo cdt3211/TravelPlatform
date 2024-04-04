@@ -134,31 +134,31 @@ function loadMap(mapType, name){
         },
         {
             name: '河南',
-            value: Math.round(Math.random() * 10),
+            value: 9.95,
         },
         {
             name: '云南',
-            value: Math.round(Math.random() * 10),
+            value: 10.4,
         },
         {
             name: '辽宁',
-            value: Math.round(Math.random() * 10),
+            value: 5.1,
         },
         {
             name: '黑龙江',
-            value: Math.round(Math.random() * 10),
+            value: 2.2,
         },
         {
             name: '湖南',
-            value: Math.round(Math.random() * 10),
+            value: 6.6,
         },
         {
             name: '安徽',
-            value: Math.round(Math.random() * 10),
+            value: 8.5,
         },
         {
             name: '山东',
-            value: Math.round(Math.random() * 10),
+            value: 8.2,
         },
         {
             name: '新疆',
@@ -170,15 +170,15 @@ function loadMap(mapType, name){
         },
         {
             name: '浙江',
-            value: Math.round(Math.random() * 10),
+            value: 7.6,
         },
         {
             name: '江西',
-            value: Math.round(Math.random() * 10),
+            value: 8.18,
         },
         {
             name: '湖北',
-            value: Math.round(Math.random() * 10),
+            value: 7.0,
         },
         {
             name: '广西',
@@ -186,11 +186,11 @@ function loadMap(mapType, name){
         },
         {
             name: '甘肃',
-            value: Math.round(Math.random() * 10),
+            value: 3.88,
         },
         {
             name: '山西',
-            value: Math.round(Math.random() * 10),
+            value: 7.64,
         },
         {
             name: '内蒙古',
@@ -198,27 +198,27 @@ function loadMap(mapType, name){
         },
         {
             name: '陕西',
-            value: Math.round(Math.random() * 10),
+            value: 7.16,
         },
         {
             name: '吉林',
-            value: Math.round(Math.random() * 10),
+            value: 3.14,
         },
         {
             name: '福建',
-            value: Math.round(Math.random() * 10),
+            value: 5.70,
         },
         {
             name: '贵州',
-            value: Math.round(Math.random() * 10),
+            value: 12.84,
         },
         {
             name: '广东',
-            value: Math.round(Math.random() * 10),
+            value: 7.77,
         },
         {
             name: '青海',
-            value: Math.round(Math.random() * 10),
+            value: 0.45,
         },
         {
             name: '西藏',
@@ -226,7 +226,7 @@ function loadMap(mapType, name){
         },
         {
             name: '四川',
-            value: Math.round(Math.random() * 10),
+            value: 6.8,
         },
         {
             name: '宁夏',
@@ -234,7 +234,7 @@ function loadMap(mapType, name){
         },
         {
             name: '海南',
-            value: Math.round(Math.random() * 10),
+            value: 0.90
         },
         {
             name: '台湾',
@@ -258,9 +258,9 @@ function loadMap(mapType, name){
 loadMap("china", "中国"); 
 
 myChart.on('mouseover', function (params) {
+    
     // 获取被点击的省份
     var province = params.name;
-    
     // 更新各省份收入数据
     var data1 = data1Data[province];
     var initialData1 = data1Data['全国'];
@@ -318,8 +318,8 @@ myChart.on('mouseover', function (params) {
         });
     }
     // 更新各省份词云数据
-    var data4 = wordCloudData[province];
-    var initialData4 = wordCloudData['全国'];
+    var data4 = data4Data[province];
+    var initialData4 = data4Data['全国'];
     if (data4) {
         myChart4.setOption({
             series: [{
@@ -335,11 +335,6 @@ myChart.on('mouseover', function (params) {
     }
 });
 myChart.on('mouseout', function () {
-    myChart4.setOption({
-        series: [{
-            data: wordCloudData['全国']
-        }],
-    });
     myChart1.setOption({
         series: [{
             data: data1Data['全国'].series1
@@ -359,6 +354,79 @@ myChart.on('mouseout', function () {
             data: data3Data['全国']
         }]
     });
+    myChart4.setOption({
+        series: [{
+            data: data4Data['全国']
+        }]
+    });
+});
+
+myChart.on('click', function (params) {
+    var province = params.name;  // 获取被点击的省份的名称
+    var url = './province/' + province + '.html';  // 创建新页面的 URL
+    if (province!= '南海诸岛'){
+        window.location.href = url;  // 打开新页面
+    }
+    // 更新各省份收入数据
+    var data1 = data1Data[province];
+    var initialData1 = data1Data['全国'];
+    if (data1) {
+        myChart1.setOption({
+            series: [{
+                data: data1.series1
+            }, {
+                data: data1.series2
+            }],
+        });
+    } else {
+        myChart1.setOption({
+            series: [{
+                data: initialData1.series1
+            }, {
+                data: initialData1.series2
+            }],
+        });
+    }
+    // 更新各省份人口数据
+    var data2 = data2Data[province];
+    var initialData2 = data2Data['全国'];
+    if (data2) {
+        myChart2.setOption({
+            series: [{
+                data: data2.series1
+            }, {
+                data: data2.series2
+            }],
+        });
+    } else {
+        myChart2.setOption({
+            series: [{
+                data: initialData2.series1
+            }, {
+                data: initialData2.series2
+            }],
+        });
+    }
+    // 更新各省份人口数据
+    var data4 = data4Data[province];
+    var initialData4 = data4Data['全国'];
+    if (data4) {
+        myChart4.setOption({
+            series: [{
+                data: data4
+            }],
+        });
+    } else {
+        myChart4.setOption({
+            series: [{
+                data: initialData4
+            },],
+        });
+    }
+    // 存储数据
+    localStorage.setItem('data1', JSON.stringify(data1));
+    localStorage.setItem('data2', JSON.stringify(data2));
+    localStorage.setItem('data4', JSON.stringify(data4));
 });
 
 

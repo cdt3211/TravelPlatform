@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海南</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>海南 HaiNan</h1>
+        <div id="intro">
+            <img src="../image/海南/海南.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>海南省，简称“琼”，位于中国最南端， 省会海口市；地处中国华南地区，北以琼州海峡与广东划界，西临北部湾与广西、越南相对，东濒南海与台湾对望。热带海洋性季风气候；陆地总面积3.54万平方千米，管辖海域总面积约200万平方千米。截至2023年，海南省辖4个地级市，5个县级市、4个县、6个自治县。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/海南/海口.jpg" alt="">
+                    <div class="name">海口</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/海南/陵水.jpg" alt="">
+                    <div class="name">陵水</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/海南/琼水.jpg" alt="">
+                    <div class="name">琼水</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/海南/三亚.jpg" alt="">
+                    <div class="name">三亚</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/海南/万宁.jpg" alt="">
+                    <div class="name">万宁</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/海南/文昌.jpg" alt="">
+                    <div class="name">文昌</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

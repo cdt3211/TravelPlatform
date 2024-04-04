@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河北</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>河北 HeBei</h1>
+        <div id="intro">
+            <img src="../image/河北/河北.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>河北省，简称“冀”，环抱首都北京，地处华北，漳河以北，省会石家庄。是中国唯一兼有高原、山地、丘陵、平原、湖泊和海滨的省份。河北在战国时期大部分属于赵国和燕国，又被称为燕赵之地，地处温带大陆性季风气候。河北地处中原地区，自古有“燕赵多有慷慨悲歌之士”之称。河北省下辖11个地级市，共有49个市辖区、21个县级市、91个县、6个自治县。截至2023年末，河北省常住总人口为7393万人。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/河北/石家庄.jpg" alt="">
+                    <div class="name">石家庄</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河北/秦皇岛.jpg" alt="">
+                    <div class="name">秦皇岛</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河北/保定.jpg" alt="">
+                    <div class="name">保定</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/河北/邯郸.jpg" alt="">
+                    <div class="name">邯郸</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河北/唐山.jpg" alt="">
+                    <div class="name">唐山</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/河北/昌黎.jpg" alt="">
+                    <div class="name">昌黎</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

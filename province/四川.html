@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>四川 SiChuan</h1>
+        <div id="intro">
+            <img src="../image/四川/四川.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p> 四川省，简称“川”或“蜀”，中国道教发源地、古蜀文明发祥地、全世界最早的纸币“交子”出现地。位于中国西南地区内陆，地处长江上游，素有“天府之国”的美誉。省会成都。四川省总面积48.6万平方千米，辖21个地级行政区，其中18个地级市、3个自治州。共55个市辖区、19个县级市，105个县，4个自治县，合计183个县级区划。四川地区的历史代表文化为“巴蜀文化”。总体气候宜人。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/四川/成都.jpg" alt="">
+                    <div class="name">成都</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/四川/九寨沟.jpg" alt="">
+                    <div class="name">九寨沟</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/四川/乐山.jpg" alt="">
+                    <div class="name">乐山</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/四川/绵阳.jpg" alt="">
+                    <div class="name">绵阳</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/四川/西昌.jpg" alt="">
+                    <div class="name">西昌</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/四川/宜宾.jpg" alt="">
+                    <div class="name">宜宾</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

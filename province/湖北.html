@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖北</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>湖北 HuBei</h1>
+        <div id="intro">
+            <img src="../image/湖北/湖北.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>湖北省，简称“鄂”，别名楚、荆楚，地处中国中部地区，省会武汉。湖北历史代表文化为“荆楚文化”，是华夏民族文化的重要组成部分，在中华文明发展史上地位举足轻重，荆楚文化继承了许多商周文化特点，源远流长，博大精深，具有鲜明的地域特色和巨大的经济文化开发价值。截至2023年6日，湖北省辖12个地级市、1个自治州、4个省直辖县级行政区。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/湖北/武汉.jpg" alt="">
+                    <div class="name">武汉</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖北/宜昌.jpg" alt="">
+                    <div class="name">宜昌</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖北/襄阳.jpg" alt="">
+                    <div class="name">襄阳</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/湖北/荆州.jpg" alt="">
+                    <div class="name">荆州</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖北/十堰.jpg" alt="">
+                    <div class="name">十堰</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/湖北/恩施土家族苗族自治州.jpg" alt="">
+                    <div class="name">恩施土家族苗族自治州</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

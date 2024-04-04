@@ -1,5 +1,4 @@
 var myChart4 = echarts.init(document.getElementById('data4'));
-
 const list = [
   {value: '50',name: '特种兵式旅游',},
   { value: '30', name: '反向旅游' },
@@ -19,7 +18,7 @@ const list = [
   { value: '13', name: '村超BA' },
   { value: '12', name: '沉浸式' },
 ];
-var wordCloudData = {
+var data4Data = {
   '全国': [
     { value: '50', name: '特种兵式旅游' },
     { value: '30', name: '反向旅游' },

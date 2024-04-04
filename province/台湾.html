@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台湾</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>台湾 TaiWan</h1>
+        <div id="intro">
+            <img src="../image/台湾/台湾.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>台湾省，简称“台”，位于中国东南沿海的大陆架上，东临太平洋，西隔台湾海峡与福建省相望，省会台北。台湾是中国不可分割的一部分。海峡两岸同胞同根同源、同文同种。中国历代政府对台湾行使管辖权。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门城市</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/台湾/高雄.jpg" alt="">
+                    <div class="name">高雄</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/台湾/花莲.jpg" alt="">
+                    <div class="name">花莲</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/台湾/台北.jpg" alt="">
+                    <div class="name">台北</div>
+                </div>
+            </div>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/台湾/台中.jpg" alt="">
+                    <div class="name">台中</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/台湾/桃园.jpg" alt="">
+                    <div class="name">桃园</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/台湾/新北.jpg" alt="">
+                    <div class="name">新北</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

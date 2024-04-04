@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海</title>
+    <link rel="stylesheet" href="../css/province.css">
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <button id="back">返回</button>
+    <div id="bg">
+        <h1>上海 ShangHai</h1>
+        <div id="intro">
+            <img src="../image/上海/上海.jpg" width="400px" height="300px" alt="">
+            <div id="texts"><p>上海市，简称“沪” ，别称“申”，中华人民共和国直辖市、国家中心城市、超大城市、上海大都市圈核心城市、国家历史文化名城，是中国共产党诞生地。春秋战国时，上海是春申君的封邑，故别称“申”。晋朝时，因渔民创造捕鱼工具“扈”，江流入海处称“渎”，因此松江下游一带称为“扈渎”，后又改“沪”，故上海简称“沪”。</p></div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="data1"></div>
+        <div id="data2"></div>
+    </div>
+    <div>
+        <div id="bg2">
+            <h2>热门景点</h2>
+            <div id="places">
+                <div class="spot">
+                    <img src="../image/上海/崇明岛.jpg" alt="">
+                    <div class="name">崇明岛</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/上海/陆家嘴.jpg" alt="">
+                    <div class="name">陆家嘴</div>
+                </div>
+                <div class="spot">
+                    <img src="../image/上海/人民广场.jpg" alt="">
+                    <div class="name">人民广场</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/data1.js"></script>
+    <script src="../js/data2.js"></script>
+    <script>
+        // 获取数据
+        var data1 = getData1();
+        if (data1) {
+            myChart1.setOption({
+                series: [{
+                    data: data1.series1
+                }, {
+                    data: data1.series2
+                }],
+            });
+        } else {
+            myChart1.setOption({
+                series: [{
+                    data: initialData1.series1
+                }, {
+                    data: initialData1.series2
+                }],
+            });
+        }
+        var data2 = getData2();
+        if (data2) {
+            myChart2.setOption({
+                series: [{
+                    data: data2.series1
+                }, {
+                    data: data2.series2
+                }],
+            });
+        } else {
+            myChart2.setOption({
+                series: [{
+                    data: initialData2.series1
+                }, {
+                    data: initialData2.series2
+                }],
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
