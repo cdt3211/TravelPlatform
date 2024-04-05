@@ -1,9 +1,44 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: #d6d7dc;
+    background-color: #e8e0e0;
 }
+
+.title{
+    background-color: transparent;
+    font-size: 25px;
+    width: 330px;
+    font-weight: bold;
+    font-family:title;
+    position: fixed;
+    left: 30px;
+    color: rgb(0, 0, 0);
+}
+@font-face {
+    font-family: title;
+    src: url(../font/霞鹜臻楷.ttf);
+}
+.header{
+    display: flex;
+    background: #f2ede1;
+    position: fixed;
+    z-index: 1;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 4px 4px 0px rgba(65, 65, 65, 0.516);
+}
+.navbar{
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+}
+
 #bg{
+    padding-top: 80px;
     margin: 0 auto;
     width: 1200px;
     height: 400px;
@@ -32,7 +67,7 @@ h1{
     height: 330px;
     margin: auto 0;
     border-top-right-radius: 1rem;
-    background-color: rgb(255, 255, 255);
+    background-color: #d9dce9;
 }
 #texts p{
     margin: 20px 30px;
@@ -76,7 +111,6 @@ h2{
     width: 32%;
     height: 250px;
     border-radius: 1rem;
-    background-color: aquamarine;
 }
 .spot img{
     width: 100%;
@@ -94,28 +128,69 @@ h2{
     font-weight: bold;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #fefcf3;
 }
 
 /* 返回按钮 */
 #back {
+    display: none;
     position: fixed;
     height:3em;
     width: 100px;
-    background-color: white;
+    background-color: rgb(218, 216, 216);
     border-radius: 0.5rem;
     letter-spacing: 5px;
     transition: all 0.2s linear;
     cursor: pointer;
-    /* border: none; */
-    background: #fff;
+    background: #f2f2f2;
     left: 100px;
-    top: 30px;
+    top: 70px;
     text-align: center;
     font-size: larger;
    } 
    #back:hover {
-    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #d1d0d0;
     transform: translateY(-2px);
    }
+  
+   /* 导航栏 */
+   .navbar button {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    margin:0px 40px;
+  }
+  
+  .navbar button:focus,
+  .navbar button:hover {
+    color: #3A8BFF;
+  }
+  
+  .navbar button:focus:after,
+  .navbar button:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  .navbar button:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #3A8BFF;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
   

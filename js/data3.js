@@ -555,13 +555,13 @@ var option = {
         left: "center",
         bottom: "5%",
         textStyle: {
-        fontSize: 16,
+        fontSize: 20,
         },
       },
       {
         subtextStyle: {
           fontSize: 20,
-        //   color: "black",
+          color: "black",
         },
         textAlign: "center",
         x: "34.5%",
@@ -599,7 +599,7 @@ var option = {
       align: "left",
       top: "middle",
       textStyle: {
-        color: "#8C8C8C",
+        color: "black",
       },
       height: 250,
     },
@@ -619,6 +619,14 @@ var option = {
             },
           },
         },
+        itemStyle: {
+          color: function(params) {
+              // 建立一个颜色数组
+              var colorList = ['#c67987','#d0cbc2','#d8aaa7'];
+              // 返回颜色
+              return colorList[params.dataIndex]
+          }
+      },
         labelLine: {
           normal: {
             length: 5,

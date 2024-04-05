@@ -4,24 +4,20 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    background: #d6d7dc;
-    /* background: linear-gradient(90deg, #f2e1e0 0,#a7b1ee 58%); */
+    background: linear-gradient(0deg,#9ccada  0%,#cde3f1  100%);
 }
 
 #rank1{
     background: transparent;
     width: 900px;
     height: 700px;
-    border-radius: 2rem;
-    box-shadow: 0px 0px 1px 0px black;
     overflow: hidden;
+    border-right: 2px solid gray;
 }
 #rank2{
     background: transparent;
     width: 900px;
     height: 700px;
-    border-radius: 2rem;
-    box-shadow: 0px 0px 1px 0px black;
     overflow: hidden;
 }
 #container{
@@ -32,7 +28,7 @@
     text-align: center;
     margin-top: 15px;
     font-weight: bolder;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .bar{
@@ -43,15 +39,15 @@
     background-color: rgba(255, 255, 255, .6);
     margin:20px 20px;
     border-radius: 1.5rem;
-    transition: transform 0.3s ease-in-out;  /* 添加过渡动画 */
+    transition: transform 0.3s ease-in-out; 
 
 }
 .bar:hover {
-    transform: scale(1.1);  /* 当鼠标悬停时，放大 .bar */
+    transform: scale(1.1); 
 }
 
 img{
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 .info{
     margin-left: 20px;

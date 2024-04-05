@@ -7,7 +7,7 @@ var option = {
         bottom: "3%",
         textStyle: {
             color: "black",
-            fontSize: 16,
+            fontSize: 20,
         },
       },
     tooltip:{
@@ -53,7 +53,7 @@ var option = {
                 show:false
             },
             axisLabel:{
-                color: '#fff',
+                color: 'white',
                 fontSize: 12,
                 align: "center",
                 margin:18,
@@ -158,9 +158,9 @@ var option = {
                 x2: 1,
                 y2: 0,
                 colorStops: [{
-                    offset: 1, color: '#0fe5e3' // 0% 处的颜色
+                    offset: 1, color: '#4662c8' // 0% 处的颜色
                 }, {
-                    offset: 0, color: '#2ca1d6' // 100% 处的颜色
+                    offset: 0, color: '#5d54a1d2' // 100% 处的颜色
                 }],
                 global: false // 缺省为 false
             },
@@ -170,7 +170,13 @@ var option = {
                 },
             }, 
             label:{
-                show:false,
+                show:true,
+                position:"right",
+                fontSize: 20,
+                fontWeight: 600,
+                formatter: function(params){
+                    return params.data;
+                },
             }
         },
     ]

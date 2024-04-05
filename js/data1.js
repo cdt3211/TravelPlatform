@@ -153,7 +153,7 @@ option = {
     left: "center",
     bottom: "5%",
     textStyle: {
-      fontSize: 16,
+      fontSize: 20,
     },
   },
   tooltip: {
@@ -204,7 +204,7 @@ option = {
       splitLine: { show: false },
       axisLine: {
         lineStyle: {
-          // color: "#B4B4B4",
+          color: "black",
         },
       },
       axisLabel: {
@@ -215,7 +215,7 @@ option = {
       splitLine: { show: false },
       axisLine: {
         lineStyle: {
-          // color: "#B4B4B4",
+          color: "black",
         },
       },
       axisLabel: {
@@ -233,6 +233,7 @@ option = {
       label: {
         normal: {
           show: true,
+          fontSize: 14,
           position: "top",
         },
       },
@@ -240,7 +241,7 @@ option = {
         normal: {
           barBorderRadius: 5,
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: "rgba(156,107,211,0.5)" },
+            { offset: 0, color: "#7180a6" },
           ]),
         },
       },
@@ -256,13 +257,14 @@ option = {
       yAxisIndex: 1,
       label: {
         normal: {
-          show: true,
+          show: false,
+          fontSize:14,
           position: "top",
         },
       },
       itemStyle: {
         normal: {
-          color: "#F02FC2",
+          color: "#6c7984",
         },
       },
       data: [15.9, 12.3, 7.6, -61.1, 31.0, -30.0, 140.3],

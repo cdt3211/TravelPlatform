@@ -2,8 +2,7 @@
 #bg2{
     width: 99vw;
     height: 100vh;
-    background: #BECBD3;
-    /* background: linear-gradient(90deg, #f2e1e0 0,#a7b1ee 58%); */
+    background: linear-gradient(0deg,#cde3f1  0%, #9ccada 100%);
     display: grid;
     grid-template-areas: 
     "data1 map data2"
@@ -26,7 +25,6 @@
   width: 451px;
   height: 385px;
   border-radius: 2rem;
-  box-shadow: 0px 0px 1px 0px black;
   overflow: hidden;
 }
 
@@ -37,7 +35,6 @@
   width: 451px;
   height: 385px;
   border-radius: 2rem;
-  box-shadow: 0px 0px 1px 0px black;
   overflow: hidden;
 }
 
@@ -48,7 +45,6 @@
   width: 451px;
   height: 385px;
   border-radius: 2rem;
-  box-shadow: 0px 0px 1px 0px black;
   overflow: hidden;
 }
 
@@ -59,6 +55,5 @@
   width: 451px;
   height: 385px;
   border-radius: 2rem;
-  box-shadow: 0px 0px 1px 0px black;
   overflow: hidden;
 }

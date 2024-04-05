@@ -11,7 +11,6 @@
     position: relative;
 
 }
-
 .title{
     background-color: transparent;
     font-size: 25px;
@@ -24,17 +23,16 @@
 }
 .header{
     display: flex;
-    background: white;
+    background: rgb(189, 219, 245);
     position: fixed;
     z-index: 1;
     justify-content: center;
     align-items: center; 
-    padding: 0 30px;
     width: 100%;
     height: 55px;
     text-align: center;
     border-bottom: 1px solid rgb(0, 0, 0);
-    box-shadow: 0px 1px 3px 0px rgb(35, 35, 35);
+    box-shadow: 0px 4px 4px 0px rgba(65, 65, 65, 0.516);
 }
 .navbar{
     background-color: transparent;
@@ -44,25 +42,24 @@
 
 #scroll {
     position: absolute;
-    bottom: 20px;  /* 设置按钮距离 #bg 底部的距离 */
-    left: 50%;  /* 将按钮水平居中 */
-    transform: translateX(-50%);  /* 修正按钮的位置，使其完全居中 */
+    bottom: 20px; 
+    left: 50%;  /* 水平居中 */
+    transform: translateX(-50%);  /* 完全居中 */
     text-align: center;
 }
-/* <reset-style> ============================ */
+
 a {
     text-decoration: none;
 }
-/* <main-style> ============================ */
+
 .main__scroll, .main__scroll-text {
-    color: #cbc8c8e4;  /* 将按钮和文字的颜色设置为白色 */
+    color: #cbc8c8e4; 
     font-size: large;
 }
 .main__scroll-box {
 animation: scroll-down 2s infinite;
 }
 
-/* Animate scroll icon */
 @keyframes scroll-down {
 0%, 100% {
     transform: translateY(0rem);

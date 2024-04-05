@@ -477,9 +477,7 @@ var data4Data = {
     {value: '38.5', name: '阿尔山国家森林公园'},
     {value: '38.5', name: '辉腾锡勒草原'},
     {value: '38', name: '满洲里国门'},
-    {value: '36', name: '额济纳胡杨林'},
-    {value: '35.5', name: '乌兰哈达火山地质公园'},
-    {value: '35.5', name: '莫尔道嘎国家森林公园'},    
+    {value: '36', name: '额济纳胡杨林'}, 
     {value: '35', name: '内蒙古博物院'},
     {value: '35', name: '额尔古纳湿地'},
     {value: '35', name: '成吉思汗陵'},
@@ -633,11 +631,12 @@ var data4Data = {
 var option = {
   backgroundColor: "transparent",
   title: {
-    text: "热门词汇",
+    // text: "热门词汇",
     left: "center",
     bottom: "5%",
+    color: "black",
     textStyle: {
-      fontSize: 16,
+      fontSize: 20,
     },
   },
   grid: {
@@ -661,7 +660,7 @@ var option = {
     extraCssText:
       'box-shadow: 0 4px 20px -4px rgba(199, 206, 215, .7);border-radius: 4px;',
     formatter: function (params) {
-      return params.name; // 只返回name属性
+      return params.name;
     },
   },
   series: [
@@ -693,17 +692,17 @@ var option = {
         fontWeight: 600,
         color: function (params) {
           let colors = [
-            '#fe9a8bb3',
-            '#fe9a8bb3',
-            '#fe9a8b03',
+            '#cf3d26fe',
+            '#d43d26ff',
+            '#b63fb6f5',
+            '#9f87ffff',
             '#9E87FFb3',
-            '#9E87FFb3',
-            '#9E87FFb3',
+            '#7a5afaff',
+            '#055af8ff',
             '#fe9a8bb3',
-            '#fe9a8bb3',
-            '#fe9a8bb3',
-            '#73DDFF',
-            '#58D5FF',
+            '#fe9a8bff',
+            '#064388',
+            '#46869b',
           ];
           return colors[parseInt(Math.random() * 10)];
         },

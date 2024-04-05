@@ -88,7 +88,7 @@ function loadMap(mapType, name){
         calculable: false,
         orient: 'horizontal',
         inRange: {
-            color: ['#e0f3f8','#abd9e9','#74add1','#4575b4','#313695'],
+            color: ['#b2c5f1','#8da8e7','#6a8bd7','#4d6fc0','#375aaa'],
             symbolSize: [30, 100]
         }
     },

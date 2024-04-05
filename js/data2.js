@@ -153,7 +153,7 @@ var option = {
         left: "center",
         bottom: "5%",
         textStyle: {
-          fontSize: 16,
+          fontSize: 20,
         },
       },
     tooltip: {
@@ -208,11 +208,10 @@ var option = {
         position: "left",
         axisLabel: {
           formatter: "{value}亿人次",
-          // color: "#ffffff63",
+          color: "black",
         },
         axisLine: {
             lineStyle: {
-                // color: 'white' // 设置坐标轴名称的颜色
             }
         },
       },
@@ -225,11 +224,11 @@ var option = {
         position: "right",
         axisLabel: {
           formatter: "{value}%",
-          // color: "#ffffff63",
+          color: "black",
         },
         axisLine: {
             lineStyle: {
-                // color: 'white' // 设置坐标轴名称的颜色
+                // color: 'white'
             }
         },
       },
@@ -244,13 +243,14 @@ var option = {
         symbolSize: 8,
         label: {
           normal: {
-            show: true,
+            show: false,
             position: "top",
           },
         },
         lineStyle: {
           normal: {
             width: 2,
+            color: "#cd7461",
           },
         },
         data: [12.8, 10.8, 8.4, -52.1, 12.8, -22.1, 93.3],
@@ -262,12 +262,13 @@ var option = {
         label: {
           normal: {
             show: true,
+            fontSize: 15,
             position: "top",
           },
         },
         itemStyle: {
             barBorderRadius: 5,
-            color: 'rgba(48, 133, 194, 1)' // 设置柱状条的颜色为蓝色
+            color: '#a893a3' // 设置柱状条的颜色
         },
         data: [50.01, 55.39, 60.06, 28.79, 32.46, 25.3, 48.9, 55.3],
       },
