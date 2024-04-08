@@ -4,7 +4,11 @@
     display: flex;
     background: linear-gradient(0deg,#cde3f1  0%,#9ccada 100%);
 }
-
+@media screen and (max-width: 600px) {
+    #bg4 {
+      width: 1800px;
+    }
+  }
 #article1{
     width: 60%;
     height: 830px;
