@@ -17,16 +17,46 @@
     <link rel="stylesheet" href="./css/bg2.css">
     <link rel="stylesheet" href="./css/bg3.css">
     <link rel="stylesheet" href="./css/bg4.css">
+    <!-- js下拉菜单 -->
+    <script src="./js/dropdown.js"></script>
+    </script>
 </head>
 <body>
+    <audio controls autoplay loop id="bgm-control">
+        <source src="./audio/bgm.mp3" type="audio/mpeg">
+    </audio>
     <div id="bg1">
         <div class="header">
             <div class="title">中国旅游数据分析可视化平台</div>
             <div class="navbar">
                 <button id="bt1" class="bt">首页</button>
-                <button id="bt2" class="bt">全国数据</button> 
-                <button id="bt3" class="bt">热门排行</button>
-                <button id="bt4" class="bt">数据分析</button>
+                <div id="button2">
+                    <button id="bt2">全国数据</button>
+                    <div id="dropdown2">
+                            <a href="./province/新疆.html" target="_blank">新疆</a>
+                            <a href="./province/浙江.html" target="_blank">浙江</a>
+                            <a href="./province/云南.html" target="_blank">云南</a>
+                            <a href="#bg2">更多</a>
+                    </div> 
+                </div>
+                <div id="button3">
+                    <button id="bt3" class="bt">热门排行</button>
+                    <div id="dropdown3">
+                        <a href="./province/香港.html" target="_blank">香港</a>
+                        <a href="./province/北京.html" target="_blank">北京</a>
+                        <a href="./province/上海.html" target="_blank">上海</a>
+                        <a href="#bg3">更多</a>
+                    </div> 
+                </div>
+                <div id="button4">
+                    <button id="bt4" class="bt">数据分析</button>
+                    <div id="dropdown4">
+                        <a href="./articles/2023/2023.html" target="_blank">2023年</a>
+                        <a href="./articles/2022/2022.html" target="_blank">2022年</a>
+                        <a href="https://www.ctaweb.org.cn/cta/gzdt/202201/4b708268c5f9401691e988ae887bba3d.shtml" target="_blank">2021年</a>
+                        <a href="#bg4">更多</a>
+                    </div> 
+                </div>
             </div>
         </div>
         <div class="main__action" id="scroll">
