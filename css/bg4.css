@@ -2,7 +2,7 @@
     width: 99vw;
     height: 1000px;
     display: flex;
-    background: linear-gradient(0deg,#cde3f1  0%,#9ccada 100%);
+    background: url(../image/bg/old_mathematics.png);
 }
 @media screen and (max-width: 600px) {
     #bg4 {
@@ -16,7 +16,7 @@
     margin-top: 95px;
     text-align: center;
     margin-left: 80px;
-    background-color: #eee7dc;
+    background-color: #ffffff;
     border-radius: 1rem;
 }
 #article1 .info{
@@ -41,7 +41,7 @@
     height: 600px;
     margin-top: 150px;
     margin-right: 40px;
-    border-left: 2px solid gray;
+    border-left: 2px solid rgb(70, 70, 70);
     text-align: center;
     padding: 30px;
 }
@@ -54,15 +54,15 @@
 #article2 .a {
     display: block;
     margin: 25px 0;
-    color: rgb(79, 79, 252);
+    color: rgb(0, 0, 0);
     font-style: italic;
     font-size: 23px;
     text-align: left;
     padding-left: 20px;
-    background-color: #d9ecf3;
+    background-color: #ffffff;
     border-radius: 1rem;
 }
 
 #article2 .a:hover {
-    color: red; 
+    text-decoration: underline;
 }

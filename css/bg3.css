@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    background: linear-gradient(0deg,#9ccada  0%,#cde3f1  100%);
+    background: url(../image/bg/old_mathematics.png);
 }
 @media screen and (max-width: 600px) {
     #bg3 {

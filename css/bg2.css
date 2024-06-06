@@ -2,7 +2,7 @@
 #bg2{
     width: 99vw;
     height: 100vh;
-    background: linear-gradient(0deg,#cde3f1  0%, #9ccada 100%);
+    background: url(../image/bg/old_mathematics.png);
     display: grid;
     grid-template-areas: 
     "data1 map data2"
