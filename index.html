@@ -11,54 +11,68 @@
             box-sizing: border-box;
         }
     </style>
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/index-1.css">
     <link rel="stylesheet" href="./css/button.css">
-    <link rel="stylesheet" href="./css/btn.css">
-    <link rel="stylesheet" href="./css/bg2.css">
-    <link rel="stylesheet" href="./css/bg3.css">
-    <link rel="stylesheet" href="./css/bg4.css">
+    <link rel="stylesheet" href="./css/index-2.css">
+    <link rel="stylesheet" href="./css/index-3.css">
+    <link rel="stylesheet" href="./css/index-4.css">
+    <link rel="stylesheet" href="./css/index-5.css">
     <!-- js下拉菜单 -->
     <script src="./js/dropdown.js"></script>
-    </script>
 </head>
 <body>
+    <!-- 背景音乐 -->
     <audio controls autoplay loop id="bgm-control">
-        <source src="./audio/bgm.mp3" type="audio/mpeg">
+        <source src="./music/bgm.mp3" type="audio/mpeg">
     </audio>
+    <!-- 页面一，首页轮播图 -->
     <div id="bg1">
+        <!-- 顶部导航栏 -->
         <div class="header">
+            <!-- 左上角题目 -->
             <div class="title">中国旅游数据分析可视化平台</div>
+            <!-- 导航栏按钮 -->
             <div class="navbar">
+                <!-- 首页 -->
                 <button id="bt1" class="bt">首页</button>
+                <!-- 全国数据 -->
                 <div id="button2">
                     <button id="bt2">全国数据</button>
+                    <!-- 下拉菜单 -->
                     <div id="dropdown2">
-                            <a href="./province/新疆.html" target="_blank">新疆</a>
-                            <a href="./province/浙江.html" target="_blank">浙江</a>
-                            <a href="./province/云南.html" target="_blank">云南</a>
+                            <a href="./province/新疆.html" >新疆</a>
+                            <a href="./province/浙江.html" >浙江</a>
+                            <a href="./province/云南.html" >云南</a>
                             <a href="#bg2">更多</a>
                     </div> 
                 </div>
+                <!-- 热门排行 -->
                 <div id="button3">
                     <button id="bt3" class="bt">热门排行</button>
+                    <!-- 下拉菜单 -->
                     <div id="dropdown3">
-                        <a href="./province/香港.html" target="_blank">香港</a>
-                        <a href="./province/北京.html" target="_blank">北京</a>
-                        <a href="./province/上海.html" target="_blank">上海</a>
+                        <a href="./province/香港.html" >香港</a>
+                        <a href="./province/北京.html" >北京</a>
+                        <a href="./province/上海.html" >上海</a>
                         <a href="#bg3">更多</a>
                     </div> 
                 </div>
+                <!-- 数据分析 -->
                 <div id="button4">
                     <button id="bt4" class="bt">数据分析</button>
+                    <!-- 下拉菜单 -->
                     <div id="dropdown4">
                         <a href="./articles/2023/2023.html" target="_blank">2023年</a>
                         <a href="./articles/2022/2022.html" target="_blank">2022年</a>
-                        <a href="https://www.ctaweb.org.cn/cta/gzdt/202201/4b708268c5f9401691e988ae887bba3d.shtml" target="_blank">2021年</a>
+                        <a href="./articles/2021/2021.html" target="_blank">2021年</a>
                         <a href="#bg4">更多</a>
                     </div> 
                 </div>
+                <!-- 小组介绍 -->
+                <button id="bt5" class="bt">小组介绍</button>
             </div>
         </div>
+        <!-- 首页下方“查看更多”按钮 -->
         <div class="main__action" id="scroll">
             <a class="main__scroll" href="#">
               <div class="main__scroll-box">
@@ -70,21 +84,31 @@
               </div>
               <span class="main__scroll-text">查看更多</span>
             </a>
-          </div>
+        </div>
     </div>
     <!-- 返回顶部的按钮 -->
     <button id="btn"><svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg></button>
+    <!-- 页面二，全国数据 -->
     <div id="bg2">
+        <!-- 旅游收入 -->
         <div id="data1"></div>
+        <!-- 旅游人次 -->
         <div id="data2"></div>
+        <!-- 中间地图 -->
         <div id="map"></div>
+        <!-- 景区数目饼状图 -->
         <div id="data3"></div>
+        <!-- 热门词云 -->
         <div id="data4"></div>
     </div>
+    <!-- 页面三，热门省份城市排行 -->
     <div id="bg3">
+        <!-- 热门省份排行（采用js） -->
         <div id="rank1"></div>
+        <!-- 热门城市排行 -->
         <div id="rank2">
             <div id="container">
+                <!-- 左边一栏 -->
                 <div id="left">
                     <div class="bar">
                         <div class="image">
@@ -132,6 +156,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 右边一栏 -->
                 <div id="right">
                     <div class="bar">
                         <div class="image">
@@ -184,7 +209,9 @@
             <div id="title3">热门城市</div>
         </div>
     </div>
+    <!-- 页面四，相关文献 -->
     <div id="bg4">
+        <!-- 左边显示文献内容 -->
         <div id="article1">
             <div class="title2">
                 <h2>《2023年中国旅游经济运行分析与2024年发展预测》</h2>
@@ -197,34 +224,39 @@
             <p>报告指出，2024年宏观环境和微观需求的利好因素叠加，全年旅游经济维持“供需两旺、积极乐观”预期。新兴市场主体加速涌入，旅游发展开始进入由“供给迎合需求”到“供给创造需求”的新阶段。政府涉旅财政政策更加积极，政策重点从需求侧为主的逆周期调节转向兼顾需求侧和供给侧的跨周期调控。签证便利化协同推进，相关政策红利不断释放，出境旅游市场景气指数势必得到大幅修复。</p>
             <p>报告建议，稳步构建旅游业高质量发展的制度创新和政策保障体系；稳住消费预期，发挥主流媒体的涉旅舆论引导作用；提振企业信心，发挥政府平台在项目投资中的示范作用；强化分类指导，围绕区域统筹和因地施策做好行政手段调控；促进多边开放，全面启动“你好，中国”全球旅游推广计划。（李志刚）</p>
         </div>
+        <!-- 右边显示其他年份的文献链接 -->
         <div id="article2">
             <h3>往期报告</h3>
-            <a class="a" href="./articles/2023/2023.html">2023年旅游经济回顾与2024年展望</a>
-            <a class="a" href="./articles/2022/2022.html">2022年旅游经济回顾与2023年展望</a>
-            <a class="a" href="https://www.ctaweb.org.cn/cta/gzdt/202201/4b708268c5f9401691e988ae887bba3d.shtml">2021年旅游经济运行分析与2022年发展预测</a>
-            <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/80532de9677f4c8685428b5a362e5ed9.shtml">2020年旅游经济运行分析与2021年发展预测</a>
-            <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/25887e628240428b94d947a3b3892643.shtml">2019旅游经济运行盘点及2020年发展预测</a>
-            <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/ce7c9de7bbb14e0d9f96015ae5f027b3.shtml">2018年旅游经济运行分析与2019年发展预测</a>
+            <a class="a" href="./articles/2023/2023.html">中国国内旅游发展年度报告2024</a>
+            <a class="a" href="./articles/2022/2022.html">中国国内旅游发展年度报告2023</a>
+            <a class="a" href="https://www.ctaweb.org.cn/cta/gzdt/202201/4b708268c5f9401691e988ae887bba3d.shtml">中国国内旅游发展年度报告2022</a>
+            <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/80532de9677f4c8685428b5a362e5ed9.shtml">中国国内旅游发展年度报告2021</a>
+            <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/25887e628240428b94d947a3b3892643.shtml">中国国内旅游发展年度报告2020</a>
+            <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/ce7c9de7bbb14e0d9f96015ae5f027b3.shtml">中国国内旅游发展年度报告2019</a>
             <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/52b4639aaa074e63a2e56316e97f530f.shtml">中国国内旅游发展年度报告2018</a>
             <a class="a" href="https://www.ctaweb.org.cn/cta/ztyj/202103/a8627f1f71614b1486059299072e4467.shtml">中国国内旅游发展年度报告2017</a>
+        </div>
     </div>
+    <div id="bg5"></div>
 
-    <script src="./js/echarts.min.js"></script>
-    <script src="./js/bg1.js"></script>
-    <script src="./js/china.js"></script>
-    <script src="./js/echarts-wordcloud.min.js"></script>
-    <script src="./js/map.js"></script>
-    <script src="./js/data1.js"></script>
-    <script src="./js/data2.js"></script>
-    <script src="./js/data3.js"></script>
-    <script src="./js/data4.js"></script>
-    <script src="./js/rank1.js"></script>
+    <!-- js引入 -->
+    <script src="./js/echarts.min.js"></script> <!-- echarts引入 -->
+    <script src="./js/index-1.js"></script> <!-- 首页js -->
+    <script src="./js/china.js"></script> <!-- 中国数据 -->
+    <script src="./js/echarts-wordcloud.min.js"></script> <!-- 词云库-->
+    <script src="./js/map.js"></script> <!-- 地图 -->
+    <script src="./js/data1.js"></script> <!-- 旅游收入 -->
+    <script src="./js/data2.js"></script> <!-- 旅游人次 -->
+    <script src="./js/data3.js"></script> <!-- 景区数目 -->
+    <script src="./js/data4.js"></script> <!-- 词云图 -->
+    <script src="./js/rank1.js"></script> <!-- 省份排名 -->
+    <!-- 导航栏点击滚动到相应页面 -->
     <script>
         document.getElementById('bt1').addEventListener('click', function() {
         document.getElementById('bg1').scrollIntoView({behavior: "smooth"});
         });
         document.getElementById('bt2').addEventListener('click', function() {
-            document.getElementById('bg2').scrollIntoView({behavior: "smooth"});
+        document.getElementById('bg2').scrollIntoView({behavior: "smooth"});
         });
         document.getElementById('bt3').addEventListener('click', function() {
             document.getElementById('bg3').scrollIntoView({behavior: "smooth"});
@@ -232,7 +264,11 @@
         document.getElementById('bt4').addEventListener('click', function() {
             document.getElementById('bg4').scrollIntoView({behavior: "smooth"});
         });
+        document.getElementById('bt5').addEventListener('click', function() {
+            document.getElementById('bg5').scrollIntoView({behavior: "smooth"});
+        });
     </script>
+    <!-- 导航栏按钮点击平滑滚动效果 -->
     <script>
         window.addEventListener('scroll', function() {
         var backToTopBtn = document.getElementById('btn');
@@ -246,10 +282,11 @@
             window.scrollTo({top: 0, behavior: 'smooth'}); 
         });
     </script>
+    <!-- 首页下方“查看更多”按钮效果 -->
     <script>
         document.getElementById('scroll').addEventListener('click', function() {
         document.getElementById('bg2').scrollIntoView({behavior: "smooth"});
-    });
+        });
     </script>
 </body>
 </html>

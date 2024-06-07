@@ -1,11 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: #e8e0e0;
+}
+body{
+    background: url(../image/bg/old_mathematics.png);
 }
 
 .title{
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
     font-size: 25px;
     width: 330px;
     font-weight: bold;
@@ -14,18 +16,13 @@
     left: 30px;
     color: rgb(0, 0, 0);
 }
-@media screen and (max-width: 600px) {
-    .title {
-      font-size: 20px;
-    }
-  }
 @font-face {
     font-family: title;
     src: url(../font/霞鹜臻楷.ttf);
 }
 .header{
     display: flex;
-    background: #f2ede1;
+    background: #ffffff;
     position: fixed;
     z-index: 1;
     justify-content: center;
@@ -33,7 +30,6 @@
     width: 100%;
     height: 55px;
     text-align: center;
-    border-bottom: 1px solid rgb(0, 0, 0);
     box-shadow: 0px 4px 4px 0px rgba(65, 65, 65, 0.516);
 }
 .navbar{

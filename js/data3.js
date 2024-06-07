@@ -1,3 +1,4 @@
+// 旅游景点饼状图
 var myChart3 = echarts.init(document.getElementById('data3'));
 
 var data3Data = {

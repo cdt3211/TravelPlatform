@@ -1,3 +1,4 @@
+// 旅游热词词云
 var myChart4 = echarts.init(document.getElementById('data4'));
 const list = [
   {value: '50',name: '特种兵式旅游',},

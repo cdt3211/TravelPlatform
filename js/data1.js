@@ -1,3 +1,4 @@
+// 旅游收入柱状图
 var myChart1 = echarts.init(document.getElementById('data1'));
 function getData1() {
   var data1 = JSON.parse(localStorage.getItem('data1'));

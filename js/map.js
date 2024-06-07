@@ -1,3 +1,4 @@
+// 中国地图数据配置
 var myChart = echarts.init(document.getElementById('map'));
 
 var catches = {};

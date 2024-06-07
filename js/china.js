@@ -1,3 +1,4 @@
+// 中国地图数据
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['exports', 'echarts'], factory);

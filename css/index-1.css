@@ -1,0 +1,176 @@
+/* 导入字体 */
+@font-face {
+    font-family: title;
+    src: url(../font/title-style.ttf);
+}
+/* 页面一样式 */
+#bg1{
+    width: 99vw;
+    height: 100vh;
+    background-color: rgb(222, 231, 247);
+    background-image: url(../image/banner1.jpg);
+    background-size: cover;
+    position: relative;
+}
+/* 添加背景渐变效果 */
+#bg1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.25), transparent);
+}
+/* 左上角标题样式 */
+.title{
+    background-color: transparent;
+    font-size: 25px;
+    width: 330px;
+    font-weight: bold;
+    font-family:title;
+    position: fixed;
+    left: 30px;
+    color: rgb(0, 0, 0);
+}
+/**
+ 导航栏样式
+ 固定在页面顶部，具有白色背景。
+ z-index为1，位于其他元素之上。
+ 内容水平和垂直居中。
+ 高度为60像素，文本居中对齐。
+ 黑色底部边框和一个盒子阴影，用于产生抬升效果。
+ */
+.header{
+    display: flex;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 4px 4px 0px rgba(65, 65, 65, 0.516);
+}
+/* 导航栏按钮样式 */
+.navbar{
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+}
+/* 首页下方“查看更多”按钮 */
+#scroll {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    text-align: center;
+    z-index: 10;
+}
+/* 链接去除下划线 */
+a {
+    text-decoration: none;
+}
+/* 首页下方按钮样式 */
+.main__scroll, .main__scroll-text {
+    color: #cbc8c8e4; 
+    font-size: large;
+}
+.main__scroll-box {
+animation: scroll-down 2s infinite;
+}
+@keyframes scroll-down {
+0%, 100% {
+    transform: translateY(0rem);
+    opacity: 1;
+}
+35% {
+    transform: translateY(1rem);
+    opacity: 0;
+}
+70% {
+    transform: translateY(-1rem);
+    opacity: 0;
+}
+}
+/* 下拉菜单按钮样式 */
+#button2,#button3,#button4{
+    display: inline-block;
+    position: relative;
+}
+/* 下拉菜单样式 */
+#dropdown2 {
+    display: none;
+    position: absolute;
+    top:100%;
+    left: 18%;
+    background-color: rgb(255, 255, 255,0.9);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#dropdown2 a {
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    z-index: 2;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+#dropdown2 a:hover{
+    background-color: #d9d9d9;
+}
+#dropdown3 {
+    display: none;
+    position: absolute;
+    top:100%;
+    left: 18%;
+    background-color: rgb(255, 255, 255,0.9);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#dropdown3 a {
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    z-index: 2;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+#dropdown3 a:hover{
+    background-color: #d9d9d9;
+}
+
+#dropdown4 {
+    display: none;
+    position: absolute;
+    top:100%;
+    left: 18%;
+    background-color: rgb(255, 255, 255,0.9);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#dropdown4 a {
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    z-index: 2;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+#dropdown4 a:hover{
+    background-color: #d9d9d9;
+}
+
+#bgm-control {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+}

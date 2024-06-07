@@ -1,3 +1,4 @@
+/* 导航栏按钮样式 */
 .navbar button {
     font-size: 18px;
     color: rgb(0, 0, 0);
@@ -37,5 +38,47 @@
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
+  }
+
+
+  /* “返回顶部”按钮样式 */
+  #btn {
+    width: 45px;
+    height: 45px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    border: none;
+    bottom: 40px;
+    right: 50px;
+    display: none;
+    z-index: 1;
+    opacity: 0.5;
+  }
+  
+  .arrow path {
+    fill: white;
+  }
+  
+  #btn:hover .text {
+    opacity: 1;
+    transition-duration: .7s;
+  }
+  
+  #btn:hover .arrow {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   

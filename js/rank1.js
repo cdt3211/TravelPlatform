@@ -1,3 +1,4 @@
+// 热门省份排行
 var myChart5 = echarts.init(document.getElementById('rank1'));
 
 var option = {

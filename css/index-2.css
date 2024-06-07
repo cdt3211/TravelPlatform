@@ -1,0 +1,64 @@
+
+#bg2{
+    width: 99vw;
+    height: 100vh;
+    background: url(../image/bg/old_mathematics.png);
+    display: grid;
+    grid-template-areas: 
+    "data1 map data2"
+    "data3 map data4";
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  #bg2 {
+    width: 1800px;
+  }
+}
+#map {
+  width: 778px;
+  height: 790px;
+  background-color: transparent;
+  grid-area: map;
+  z-index: 0;
+}
+#data1 {
+  background: transparent;
+  grid-area: data1;
+  margin: 5px;
+  width: 451px;
+  height: 385px;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+#data2 {
+  background: transparent;
+  grid-area: data2;
+  margin: 5px;
+  width: 451px;
+  height: 385px;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+#data3 {
+  background: transparent;
+  grid-area: data3;
+  margin: 5px;
+  width: 451px;
+  height: 385px;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+#data4 {
+  background: transparent;
+  grid-area: data4;
+  margin: 5px;
+  width: 451px;
+  height: 385px;
+  border-radius: 2rem;
+  overflow: hidden;
+}

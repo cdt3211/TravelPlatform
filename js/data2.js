@@ -1,3 +1,4 @@
+// 旅游人次柱状图
 var myChart2 = echarts.init(document.getElementById('data2'));
 function getData2() {
   var data2 = JSON.parse(localStorage.getItem('data2'));

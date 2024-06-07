@@ -1,0 +1,8 @@
+#bg5{
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background: url(../image/bg/old_mathematics.png);
+}

@@ -1,3 +1,4 @@
+// 省份页面导航栏点击跳转功能
 document.getElementById('bt1').onclick = function() {
     window.history.back();
 };

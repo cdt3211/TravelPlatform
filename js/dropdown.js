@@ -1,3 +1,4 @@
+// 下拉菜单
 window.onload = function() {
     var dropdowns = ['dropdown2', 'dropdown3', 'dropdown4'];
 
