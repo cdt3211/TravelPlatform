@@ -1,17 +1,11 @@
 #bg4{
     width: 99vw;
-    height: 1000px;
+    height: 100vh;
     display: flex;
     background: url(../image/bg/old_mathematics.png);
 }
-@media screen and (max-width: 600px) {
-    #bg4 {
-      width: 1800px;
-    }
-  }
 #article1{
     width: 60%;
-    height: 830px;
     margin-right: 30px;
     margin-top: 95px;
     text-align: center;
@@ -31,7 +25,7 @@
     font-size: 20px;
 }
 #article1 p{
-    font-size: 23px;
+    font-size: 20px;
     text-indent: 50px;
     text-align: left;
     margin: 0 40px;

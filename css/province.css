@@ -5,7 +5,7 @@
 body{
     background: url(../image/bg/old_mathematics.png);
 }
-
+/* 网站标题 */
 .title{
     background-color: rgb(255, 255, 255);
     font-size: 25px;
@@ -16,10 +16,12 @@ body{
     left: 30px;
     color: rgb(0, 0, 0);
 }
+/* 标题字体 */
 @font-face {
     font-family: title;
     src: url(../font/霞鹜臻楷.ttf);
 }
+/* 导航栏 */
 .header{
     display: flex;
     background: #ffffff;
@@ -32,12 +34,13 @@ body{
     text-align: center;
     box-shadow: 0px 4px 4px 0px rgba(65, 65, 65, 0.516);
 }
+/* 导航栏按钮 */
 .navbar{
     background-color: transparent;
     justify-content: center;
     align-items: center;
 }
-
+/* 背景 */
 #bg{
     padding-top: 80px;
     margin: 0 auto;
@@ -50,12 +53,14 @@ h1{
     font-size: 50px;
     opacity: 0.7;
 }
+/* 省份介绍 */
 #intro{
     display: flex;
     width: 100%;
     height: 350px;
     margin: 0 auto;
 }
+/* 省份图片 */
 #intro img{
     width: 40%;
     height: 330px;
@@ -63,12 +68,13 @@ h1{
     border-top-left-radius: 1rem;
     margin-left: 20px;
 }
+/* 介绍文字 */
 #texts{
     width: 60%;
     height: 330px;
     margin: auto 0;
     border-top-right-radius: 1rem;
-    background-color: #d9dce9;
+    background-color: #ffffff;
 }
 #texts p{
     margin: 20px 30px;
@@ -81,12 +87,15 @@ h1{
     margin-top: 10px;
     margin: 0 auto;
     width: 1200px;
-    height: 400px;}
+    height: 400px;
+}
+/* 旅游收入 */
 #data1{
     width: 50%;
     height: 400px;
     text-align: center;
 }
+/* 旅游人次 */
 #data2{
     width: 50%;
     height: 400px;
@@ -134,7 +143,6 @@ h2{
 
 /* 返回按钮 */
 #back {
-    display: none;
     position: fixed;
     height:3em;
     width: 100px;

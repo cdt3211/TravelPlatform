@@ -6,11 +6,7 @@
     align-items: center; 
     background: url(../image/bg/old_mathematics.png);
 }
-@media screen and (max-width: 600px) {
-    #bg3 {
-      width: 1800px;
-    }
-  }
+/* 热门省份 */
 #rank1{
     background: transparent;
     width: 900px;
@@ -18,6 +14,7 @@
     overflow: hidden;
     border-right: 2px solid gray;
 }
+/* 热门城市 */
 #rank2{
     background: transparent;
     width: 900px;
@@ -50,7 +47,7 @@
     transform: scale(1.1); 
 }
 
-img{
+#bg3 img{
     border-radius: 1.5rem;
 }
 .info{

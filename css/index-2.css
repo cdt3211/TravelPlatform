@@ -11,11 +11,6 @@
     align-items: center;
 }
 
-@media screen and (max-width: 600px) {
-  #bg2 {
-    width: 1800px;
-  }
-}
 #map {
   width: 778px;
   height: 790px;
