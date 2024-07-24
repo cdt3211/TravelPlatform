@@ -1,6 +1,10 @@
 # 中国旅游数据可视化平台
 
-![数据展示](https://abnerblog-1317606226.cos.ap-nanjing.myqcloud.com/202407241900961.png)
+![image-20240724195354873](https://abnerblog-1317606226.cos.ap-nanjing.myqcloud.com/202407241953684.png)
+
+![image-20240724195428727](https://abnerblog-1317606226.cos.ap-nanjing.myqcloud.com/202407241954441.png)
+
+![image-20240724195500351](https://abnerblog-1317606226.cos.ap-nanjing.myqcloud.com/202407241955385.png)
 
 ## 项目概述
 
